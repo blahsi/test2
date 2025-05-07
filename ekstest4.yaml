@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+spec:
+  containers:
+    - name: my-container
+      image: my-image:latest
+      env:
+        - name: SECRET_VAR
+          valueFrom:
+            secretKeyRef:
+              name: my-secret
+              key: secret-key
